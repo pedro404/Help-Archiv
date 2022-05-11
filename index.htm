@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="data/script/data.js"></script>
+    <script src="data/script/file.js"></script>
+    <script src="data/script/mouse.js"></script>
+    <script src="data/script/script.js"></script>
+
+    <link rel="stylesheet" href="data/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="data/css/new.css" type="text/css" />
+    <title>Help Archiv V.2.1</title>
+  </head>
+
+  <body style="background-color: #f0f0f0" scroll="no">
+    <!-- Добавление новых записей -->
+
+    <div style="display: none" id="FormTextFile">
+      <div id="BoxFormTextFile">
+        <div class="GroupKod">Note name</div>
+        <div class="Group">
+          <input class="addText input" type="text" id="TopTextFile" value="" />
+        </div>
+
+        <span class="GroupKod"> Code </span>
+
+        <div class="Group big">
+          <div class="boxCode">
+            <div id="OutFofm"></div>
+          </div>
+        </div>
+        <span class="GroupKod"> Hashtags - Comma separator </span>
+        <div class="Group">
+          <input
+            class="addText input"
+            type="text"
+            id="BottomTextFile"
+            value=""
+          />
+        </div>
+        <a class="a5" href="#" onclick="SaveFileNew();">Save</a>
+        <a class="a5" href="#" onclick="TextEditStorno();">Storno</a>
+      </div>
+    </div>
+    <!-- Добавление новых записей -->
+
+    <textarea class="help" id="help" style="display: none"></textarea>
+
+    <table style="width: 100%; height: 100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" height="50">
+          <div class="box cntr" id="top">
+            <ul id="folder"></ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <!-- Div Search -->
+          <div class="div-search">
+            <input class="input-search" id="inSearch" type="text" />
+            <div class="div-clear" title="Clear">&lt;</div>
+          </div>
+          <!-- Div Search -->
+          <div class="menu-left box lft" id="left"></div>
+        </td>
+        <td style="width: 100%">
+          <script type="text/javascript">
+            //---------------------- Редактировать Текст ---------------------------
+
+            var TopElemId = "";
+            var MxText = "";
+            var HashTagEdit = "";
+
+            function TextEdit() {
+              var elem = document.getElementById(TopElemId);
+              GenFile = TopElemId;
+              HashTagEdit = elem.childNodes[3].innerHTML;
+
+              document.getElementById("TopTextFile").value =
+                elem.childNodes[0].innerHTML;
+              document.getElementById("BottomTextFile").value = HashTagEdit;
+
+              for (var i = 0; i < elem.childNodes[2].childNodes.length; i++) {
+                if (elem.childNodes[2].childNodes[i].className == "TextFile") {
+                  MxText = elem.childNodes[2].childNodes[i].innerHTML;
+                  if (i == 0) {
+                    GlobForm("x");
+                  }
+                  if (i > 0) {
+                    GlobForm("x");
+                  }
+                }
+              }
+              MxText = "";
+              document.getElementById("FormTextFile").style.display =
+                document.getElementById("FormTextFile").style.display == "none"
+                  ? "block"
+                  : "none";
+            }
+
+            //---------------------- Storno - Редактировать Текст ---------------------------
+
+            function TextEditStorno() {
+              window.location.reload();
+            }
+
+            //---------- Generator bloka -------
+            //__________________________________
+
+            var sTime = 0;
+            var Mkod;
+
+            function GlobForm(index) {
+              sTime++;
+
+              Mkod =
+                '<div id="f' +
+                sTime +
+                '" class="buferblok"><table cellspacing="0" cellpadding="0"><tr>';
+              Mkod +=
+                '<td valign="top" class="top_left"><a href="#" onclick="BlokIndex(\'f' +
+                sTime +
+                "', 'top');\">▲</a></td>";
+              Mkod +=
+                '<td rowspan="2" class="t_left"><textarea class="txtADD">' +
+                MxText +
+                "</textarea></td>";
+              Mkod +=
+                '<td rowspan="2" valign="top" class="close_left"><a href="#" onclick="document.getElementById(\'f' +
+                sTime +
+                "').outerHTML='';\">×</a></td></tr>";
+              Mkod +=
+                '<tr><td valign="bottom" class="b_left"><a href="#" onclick="BlokIndex(\'f' +
+                sTime +
+                "', 'bottom');\">▼</a></td></tr></table></div>";
+
+              document.getElementById("OutFofm").innerHTML += Mkod;
+
+              if (index != "x") {
+                // Если x то при чтении блоков для редактирования, блоки не перекидываются вверх
+                var list = document.getElementById("OutFofm");
+                list.insertBefore(
+                  document.getElementById("f" + sTime + ""),
+                  list.childNodes[index]
+                );
+              }
+            }
+
+            //---------- Index bloka -------
+            //__________________________________
+
+            function BlokIndex(elemId, poz) {
+              var data = OutFofm.getElementsByTagName("div");
+              for (var i = 0; i < data.length; i++) {
+                if (data[i].id == elemId) {
+                  if (poz == "top") {
+                    GlobForm(i);
+                    return false;
+                  }
+                  if (poz == "bottom") {
+                    GlobForm(i + 1);
+                    return false;
+                  }
+                }
+              }
+            }
+          </script>
+          <div class="box lft" id="right"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" id="Bot">
+          <span
+            ><a class="a6" href="#" onclick="showDialog();"
+              >New Category</a
+            ></span
+          >
+          <span><a class="a6" href="#" onclick="OffForma();">New Note</a></span>
+        </td>
+      </tr>
+    </table>
+    <textarea id="save"></textarea>
+
+    <div id="MyMenu" class="menu">
+      <img
+        title="Delete Category"
+        class="mBut"
+        id="aDel"
+        src="data/img/delete.png"
+        onclick="FolderDel(TopFolderDel);"
+      />
+      <img
+        title="Edit Note"
+        class="mBut"
+        id="EditText"
+        src="data/img/text-edit.png"
+        onclick="TextEdit();"
+      />
+      <img
+        title="Delete Note"
+        class="mBut"
+        id="DelText"
+        src="data/img/del-text.png"
+        onclick="TextDel();"
+      />
+      <img
+        title="Add Note"
+        class="mBut"
+        id="aText"
+        src="data/img/text.png"
+        onclick="OffForma();"
+      />
+      <img
+        title="Add Category"
+        class="mBut"
+        id="aFolder"
+        src="data/img/folder-add.png"
+        onclick="showDialog();"
+      />
+      <img
+        title="Run script"
+        class="mBut"
+        id="aRun"
+        src="data/img/play-button.png"
+        onclick="showDialog2();"
+      />
+    </div>
+    <script src="./data/script/search.js"></script>
+  </body>
+</html>

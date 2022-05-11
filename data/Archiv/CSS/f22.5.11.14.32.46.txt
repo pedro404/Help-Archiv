@@ -1,0 +1,6 @@
+﻿<div class="TopTextFile" id="f22.5.11.14.32.46"><span class="SpanTopTextFile">Cursor</span><br />
+<span class="TextareaBox">
+<textarea class="TextFile">cursor: pointer;</textarea>
+</span>
+<span class="BottomTextFile">Cursor</span>
+</div>

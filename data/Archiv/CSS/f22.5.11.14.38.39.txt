@@ -1,0 +1,7 @@
+﻿<div class="TopTextFile" id="f22.5.11.14.38.39"><span class="SpanTopTextFile">Aspect ratio</span><br />
+<span class="TextareaBox">
+<textarea class="TextFile">aspect-ratio: 1 / 1;</textarea>
+<textarea class="TextFile">aspect-ratio: 16 / 9;</textarea>
+</span>
+<span class="BottomTextFile">Aspect-ratio</span>
+</div>

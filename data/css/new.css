@@ -1,0 +1,39 @@
+.menu-left {
+  padding-bottom: 40px;
+  padding-left: 25px;
+  overflow-x: hidden;
+}
+
+li .slovoMenu {
+  list-style-image: url("../img/hash-tag.png");
+  padding-left: 0px;
+}
+
+.div-search {
+  position: relative;
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 280px;
+}
+.div-clear {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 40px;
+  height: 31px;
+  background-color: #5dc4ff;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+  padding-left: 3px;
+}
+
+.input-search {
+  width: 100%;
+  height: 33px;
+  color: white;
+  font-size: 18px;
+  background: #8bd4ff;
+  padding: 5px;
+  border: 1px solid #2eb2fe;
+}

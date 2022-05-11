@@ -1,0 +1,27 @@
+﻿<div class="TopTextFile" id="f22.5.11.14.34.6"><span class="SpanTopTextFile">Table</span><br />
+<span class="TextareaBox">
+<textarea class="TextFile"><table>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+</table></textarea>
+<textarea class="TextFile">+───+
+|   |
++───+
+|   |
++───+</textarea>
+<textarea class="TextFile"><table>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</table></textarea>
+<textarea class="TextFile">+───+───+
+|   |   |
++───+───+</textarea>
+</span>
+<span class="BottomTextFile">Table</span>
+</div>

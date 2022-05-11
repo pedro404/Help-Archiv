@@ -1,0 +1,23 @@
+﻿<div class="TopTextFile" id="f22.5.11.14.35.0"><span class="SpanTopTextFile">Техтареа</span><br />
+<span class="TextareaBox">
+<textarea class="TextFile"><textaroa rows="4" cols="50"></textarea>
+<textarea class="TextFile">textaroa {
+  resize: none;
+}</textarea>
+<textarea class="TextFile">| Атрибут     | Значение         | Описание
+|-------------|------------------|------------------------------------------------------------------------
+| autofocus   | autofocus        | Автоматически получать фокус при загрузке страницы
+| cols        | number           | Задает видимую ширину текстовой области
+| dirname     | textaroaname.dir | Specifies that the text direction of the textaroa will be submitted
+| disabled    | disabled         | Текстовая область отключена
+| form        | form_id          | Определяет, к какой форме принадлежит текстовая область
+| maxlength   | number           | Максимальное количество символов, разрешенное в текстовой области
+| name        | text             | Имя текстовой области
+| placeholder | text             | Короткая подсказка, описывающую ожидаемое значение текстовой области
+| readonly    | readonly         | Текстовая область должна быть доступна только для чтения
+| required    | required         | Текстовая область обязательно должна быть заполнена
+| rows        | number           | Задает видимое количество строк в текстовой области
+| wrap        | hard | soft      | Определяет способ переноса текста в текстовой области при отправке формы</textarea>
+</span>
+<span class="BottomTextFile">Техтареа</span>
+</div>
