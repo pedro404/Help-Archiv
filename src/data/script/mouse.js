@@ -6,6 +6,10 @@ document.onmouseover = function () {
   if (elem.className == "TextFile") {
     RunKod = elem.innerText;
     elem.value = elem.value.replace(new RegExp("textaroa", "g"), "textarea");
+    titleHelp("Copy");
+  }
+  if (elem.id == "inSearch") {
+    titleHelp("Hashtags search");
   }
 };
 
@@ -14,10 +18,14 @@ document.onmouseover = function () {
 document.onmouseout = function () {
   var elem = window.event.srcElement;
 
-  if (elem.className == "TextFile over") {
-    elem.className = "TextFile";
+  if (elem.className == "TextFile" || elem.id == "inSearch") {
+    titleHelp("");
   }
 };
+
+function titleHelp(text) {
+  document.getElementById("helpContent").innerHTML = text;
+}
 
 //---------------------- OnClick ---------------------------------
 
@@ -99,8 +107,8 @@ document.onclick = function () {
 
   if (elem.className == "TextFile") {
     window.clipboardData.setData("text", elem.innerText);
-    //elem.style.backgroundColor = "#ffdff1";
     elem.style.backgroundColor = "#b9f6ca";
+    titleHelp("Copied");
 
     setTimeout(function () {
       elem.style.backgroundColor = "#FFFFEB";

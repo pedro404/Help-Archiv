@@ -37,3 +37,12 @@ li .slovoMenu {
   padding: 5px;
   border: 1px solid #2eb2fe;
 }
+
+#titleHelp {
+  background: #000000;
+  padding-top: 2px;
+  color: aqua;
+  margin-left: 10px;
+  height: 25px;
+  width: 20%;
+}
