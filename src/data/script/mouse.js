@@ -6,6 +6,7 @@ document.onmouseover = function () {
   if (elem.className == "TextFile") {
     RunKod = elem.innerText;
     elem.value = elem.value.replace(new RegExp("textaroa", "g"), "textarea");
+    elem.style.backgroundColor = "#f1f8e9";
     titleHelp("Copy");
   }
   if (elem.id == "inSearch") {
@@ -17,6 +18,10 @@ document.onmouseover = function () {
 
 document.onmouseout = function () {
   var elem = window.event.srcElement;
+
+  if (elem.className == "TextFile") {
+    elem.style.backgroundColor = "#FFFFEB";
+  }
 
   if (elem.className == "TextFile" || elem.id == "inSearch") {
     titleHelp("");
@@ -49,6 +54,7 @@ document.onclick = function () {
     }
     TopMenuId = elem.id;
     Help();
+    clearInput();
     return false;
   }
 
@@ -112,15 +118,20 @@ document.onclick = function () {
 
     setTimeout(function () {
       elem.style.backgroundColor = "#FFFFEB";
-    }, 500);
+    }, 200);
+    elem.blur();
   }
 
   if (elem.className.indexOf("div-clear") != -1) {
-    document.getElementById("inSearch").value = "";
-    hashtagSeArch();
-    document.getElementById("inSearch").focus();
+    clearInput();
   }
 };
+
+function clearInput() {
+  document.getElementById("inSearch").value = "";
+  hashtagSeArch();
+  document.getElementById("inSearch").focus();
+}
 
 //---------------------- OnMousup ---------------------------------
 

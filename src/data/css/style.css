@@ -177,6 +177,9 @@ li {
   color: #424242;
   cursor: pointer;
 }
+.el-over {
+  background-color: #ebfff5;
+}
 #BottomTextFile,
 #TopTextFile {
   margin-top: 10px;

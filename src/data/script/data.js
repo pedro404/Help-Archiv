@@ -1,2 +1,2 @@
-﻿var TopMenuFolder = 'HTML';
-var LeftMenuSlovo = 'Cursor';
+﻿var TopMenuFolder = 'CSS';
+var LeftMenuSlovo = 'Push';
